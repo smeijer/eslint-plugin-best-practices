@@ -11,7 +11,7 @@
 	"main": "src/index.js",
 	"type": "commonjs",
 	"scripts": {
-		"test": "node src/test.js"
+		"test": "node src/index.test.js"
 	},
 	"peerDependencies": {
 		"eslint": ">=8.0.0"
