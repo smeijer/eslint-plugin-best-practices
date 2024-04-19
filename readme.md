@@ -1,39 +1,29 @@
-# eslint-plugin-best-practice
+# eslint-plugin-best-practices
 
 > an eslint plugin to enforce some best practices
 
 ## Install
 
 ```sh
-npm install eslint-plugin-best-practice
+npm install eslint-plugin-best-practices
 ```
 
 ## Usage
 
 ```js
-import { main } from 'eslint-plugin-best-practice';
-
-main('hi');
-//=> 'hello
+// eslintrc.js
+module.exports = {
+  plugins: ['eslint-plugin-best-practices'],
+  rules: {
+    'best-practices/explicit-internal-boundaries': ['error']
+  },
+}
 ```
 
-## API
+## Rules
 
-### eslint-plugin-best-practice(input, options?)
+### best-practices/explicit-internal-boundaries
 
-#### input
+This plugin detects imports from `internal` directories from non direct parent path. The practice comes from a GO convention, where `internal` directories are special. 
 
-Type: `string`
-
-Lorem ipsum.
-
-#### options
-
-Type: `object`
-
-##### postfix
-
-Type: `string`\
-Default: `'rainbows'`
-
-Lorem ipsum.
+It's fine to import files from an `internal` directory is on a direct child path, but not when it's a parent or sibling directory.
