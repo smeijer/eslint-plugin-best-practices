@@ -10,6 +10,8 @@ module.exports = {
   },
   create(context) {
     function checkPath(path, node) {
+			if (typeof path !== 'string') return;
+
       if (!path.includes('/internal/')) return true;
 
       if (path.includes('..')) {

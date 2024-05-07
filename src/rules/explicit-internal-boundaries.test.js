@@ -19,6 +19,12 @@ ruleTester.run('explicit-internal-boundaries', explicitInternalBoundaries, {
     { code: "import './internal/nested/internal/deep.ts';" },
     { code: "import('./internal/nested/internal/deep.ts');" },
     { code: "require('./internal/nested/internal/deep.ts');" },
+
+		// should ignore dynamic imports with vars
+		{ code: [
+				"const BUILD_PATH = path.join(CWD, '.build/index.js');",
+				"import(BUILD_PATH);",
+		].join('\n')}
   ],
   invalid: [
     // can't go up when the path contains /internal/
