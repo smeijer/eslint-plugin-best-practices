@@ -8,15 +8,18 @@
 	"author": "Stephan Meijer <stephan.meijer@gmail.com> (https://meijer.ws)",
 	"bugs": "https://github.com/smeijer/eslint-plugin-best-practices/issues",
 	"homepage": "https://github.com/smeijer/eslint-plugin-best-practices#readme",
-	"main": "src/index.js",
-	"type": "commonjs",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"type": "module",
 	"files": [
-		"src",
+		"dist",
 		"license"
 	],
 	"scripts": {
-		"test": "globstar -- node --test \"src/**/*.test.js\"",
-		"test:watch": "globstar -- node --watch --test \"src/**/*.test.js\""
+		"dev": "pkgroll --watch",
+		"build": "pkgroll",
+		"test": "globstar -- node --import tsx --test \"src/**/*.test.ts\"",
+		"test:watch": "globstar -- node --import tsx --watch --test \"src/**/*.test.ts\""
 	},
 	"peerDependencies": {
 		"eslint": ">=8.0.0"
@@ -27,12 +30,22 @@
 		"eslint-plugin"
 	],
 	"devDependencies": {
-		"eslint": "^8.36.0",
-		"globstar": "^1.0.0"
+		"@smeijer/eslint-config": "^1.5.0",
+		"@smeijer/prettier-config": "^1.2.0",
+		"@types/debug": "^4.1.12",
+		"@types/eslint": "^8.56.10",
+		"@types/node": "^18.19.33",
+		"eslint": "^8.49.0",
+		"globstar": "^1.0.0",
+		"pkgroll": "^2.0.2",
+		"tsx": "^4.10.1",
+		"typescript": "^5.4.5"
 	},
 	"dependencies": {
 		"debug": "^4.3.4",
 		"find-up": "^7.0.0",
-		"get-tsconfig": "^4.7.4"
+		"get-tsconfig": "^4.7.4",
+		"glob": "^10.3.15",
+		"minimatch": "^9.0.4"
 	}
 }
