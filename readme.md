@@ -16,10 +16,10 @@ module.exports = {
   plugins: ['eslint-plugin-best-practices'],
   rules: {
     'best-practices/explicit-internal-boundaries': ['error'],
-		'best-practices/isolated-route-files': ['error', {
-			'routeFiles': ['app/*/routes/**'],
-			'ignoredRouteFiles': ['.*', '**/*.css'],
-		}]
+    'best-practices/isolated-route-files': ['error', {
+      'routeFiles': ['app/*/routes/**'],
+      'ignoredRouteFiles': ['.*', '**/*.css'],
+    }]
   },
 }
 ```
@@ -29,7 +29,7 @@ module.exports = {
 ```js
 module.exports = {
   rules: {
-  	'best-practices/explicit-internal-boundaries': ['error'],
+    'best-practices/explicit-internal-boundaries': ['error'],
   },
 };
 ```
@@ -52,9 +52,9 @@ Here is an example of how you might configure this rule in your ESLint setup:
 
 ```javascript
 module.exports = {
-	rules: {
-		'best-practices/explicit-internal-boundaries': ['error'],
-	},
+  rules: {
+    'best-practices/explicit-internal-boundaries': ['error'],
+  },
 };
 ```
 
@@ -90,12 +90,12 @@ This rule ensures that each module's internals remain isolated, reinforcing clea
 
 ```js
 module.exports = {
-	rules: {
-		'best-practices/isolated-route-files': ['error', {
-			'routeFiles': ['app/*/routes/**'],
-			'ignoredRouteFiles': ['.*', '**/*.css'],
-		}],
-	},
+  rules: {
+    'best-practices/isolated-route-files': ['error', {
+      'routeFiles': ['app/*/routes/**'],
+      'ignoredRouteFiles': ['.*', '**/*.css'],
+    }],
+  },
 };
 ```
 ### What It Does
@@ -116,12 +116,12 @@ Here is an example of how you might configure this rule in your ESLint setup:
 
 ```javascript
 module.exports = {
-	rules: {
-		'best-practices/isolated-route-files': ['error', {
-			'routeFiles': ['app/*/routes/**'],
-			'ignoredRouteFiles': ['.*', '**/*.css', '**/*.test.{ts,tsx}'],
-		}],
-	},
+  rules: {
+    'best-practices/isolated-route-files': ['error', {
+      'routeFiles': ['app/*/routes/**'],
+      'ignoredRouteFiles': ['.*', '**/*.css', '**/*.test.{ts,tsx}'],
+    }],
+  },
 };
 ```
 
