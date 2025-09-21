@@ -26,8 +26,8 @@
 	},
 	"keywords": [
 		"eslint",
-		"eslintplugin",
-		"eslint-plugin"
+		"eslint-plugin",
+		"code-quality"
 	],
 	"devDependencies": {
 		"@smeijer/eslint-config": "^1.5.0",
